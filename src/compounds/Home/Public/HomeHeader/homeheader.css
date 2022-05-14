@@ -1,0 +1,21 @@
+#home-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 8.5%;
+  width: 100%;
+  padding: 5%;
+  background-color: rgb(2, 175, 206);
+}
+
+#home-header .icon-wrapper {
+  color: white;
+}
+
+#home-header-profile {
+  width: 40px;
+  height: 40px;
+}

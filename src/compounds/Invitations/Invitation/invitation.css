@@ -1,0 +1,66 @@
+.invit {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  padding: 10px 5%;
+  margin-bottom: 5px;
+  background-color: rgb(250, 250, 250);
+}
+
+.invit:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.invit-profile {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.invit-info {
+  text-align: center;
+}
+
+/* .invit-info-name {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: inherit;
+}
+
+.invit-info-name:hover {
+  overflow: visible;
+  max-width: min-content;
+  text-overflow: visible;
+} */
+
+.invit-actions {
+  display: flex;
+}
+
+.accept-invit,
+.reject-invit,
+.cancel-invit {
+  cursor: pointer;
+  color: white;
+  width: 70px;
+  height: 30px;
+  border: 0;
+}
+
+.accept-invit {
+  background-color: rgb(2, 175, 206);
+}
+
+.reject-invit {
+  margin-left: 5px;
+  background-color: rgb(255, 103, 103);
+}
+
+.cancel-invit {
+  background-color: rgb(255, 103, 103);
+}

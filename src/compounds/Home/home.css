@@ -1,0 +1,19 @@
+#home {
+  display: flex;
+  height: 100vh;
+}
+
+#home aside {
+  /* position: relative; */
+
+  width: 27%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.3s;
+  border-right: 1px solid white;
+}
+
+#home-main {
+  width: 73%;
+  background-color: rgb(235, 235, 235);
+}
