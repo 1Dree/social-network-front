@@ -2,7 +2,7 @@ import { onRes } from "../apiLib";
 
 export default async function verifyAccess(user) {
   const response = await fetch(
-    `${process.env.REACT_APP_SERVER_URL}account/verify-access`,
+    `${process.env.REACT_APP_SERVER_URL}/account/verify-access`,
     {
       method: "get",
       headers: {

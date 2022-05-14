@@ -1,6 +1,6 @@
 export default async function onSignout(user, userData) {
   const response = await fetch(
-    `${process.env.REACT_APP_SERVER_URL}account/signout`,
+    `${process.env.REACT_APP_SERVER_URL}/account/signout`,
     {
       method: "delete",
       headers: {

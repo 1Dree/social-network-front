@@ -2,7 +2,7 @@ import { onDefineProfileObj } from "../apiLib";
 
 export default async function onFetInvits(setUser, user) {
   const response = await fetch(
-    `${process.env.REACT_APP_SERVER_URL}invit/get-invitations/${user._id}`,
+    `${process.env.REACT_APP_SERVER_URL}/invit/get-invitations/${user._id}`,
     {
       method: "get",
       headers: {

@@ -2,7 +2,7 @@ import { onRes, onDefineProfileObj } from "../apiLib";
 
 export default async function onSignup(setUser, login, socket) {
   const response = await fetch(
-    `${process.env.REACT_APP_SERVER_URL}account/signup`,
+    `${process.env.REACT_APP_SERVER_URL}/account/signup`,
     {
       method: "post",
       headers: {

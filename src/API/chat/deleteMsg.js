@@ -1,7 +1,7 @@
 export default async function deleteMsg(props) {
   try {
     const response = await fetch(
-      `${process.env.REACT_APP_SERVER_URL}chat/delete-msg`,
+      `${process.env.REACT_APP_SERVER_URL}/chat/delete-msg`,
       {
         method: "delete",
         headers: {

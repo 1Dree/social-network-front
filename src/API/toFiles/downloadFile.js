@@ -1,7 +1,7 @@
 const downloadFile = async (filename, user) => {
   try {
     const response = await fetch(
-      `${process.env.REACT_APP_SERVER_URL}chat/download-file?filename=${filename}`,
+      `${process.env.REACT_APP_SERVER_URL}/chat/download-file?filename=${filename}`,
       {
         method: "get",
         headers: {

@@ -1,6 +1,6 @@
 export default async function newPassword(user, data) {
   const response = await fetch(
-    `${process.env.REACT_APP_SERVER_URL}account/new-password`,
+    `${process.env.REACT_APP_SERVER_URL}/account/new-password`,
     {
       method: "put",
       headers: {

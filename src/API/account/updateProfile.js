@@ -2,7 +2,7 @@ import { onRes } from "../apiLib";
 
 export default async function updateProfile(user, setUser, update) {
   const response = await fetch(
-    `${process.env.REACT_APP_SERVER_URL}account/update-profile`,
+    `${process.env.REACT_APP_SERVER_URL}/account/update-profile`,
     {
       method: "put",
       headers: {

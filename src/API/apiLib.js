@@ -12,7 +12,7 @@ export const onDefineProfileObj = accessToken => async subject => {
       if (profile === "default") return "/default-profile.jpg";
 
       const res = await fetch(
-        `${process.env.REACT_APP_SERVER_URL}chat/download-file?auth=${accessToken}&filename=${profile}`
+        `${process.env.REACT_APP_SERVER_URL}/chat/download-file?auth=${accessToken}&filename=${profile}`
       );
       const blob = await res.blob();
       const newBlob = new Blob([blob], {

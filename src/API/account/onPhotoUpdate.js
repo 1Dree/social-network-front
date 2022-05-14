@@ -7,7 +7,7 @@ export default async function onPhotoUpdate(user, formData) {
       : "";
 
   const response = await fetch(
-    `${process.env.REACT_APP_SERVER_URL}account/change-photo${query}`,
+    `${process.env.REACT_APP_SERVER_URL}/account/change-photo${query}`,
     {
       method: "post",
       headers: {

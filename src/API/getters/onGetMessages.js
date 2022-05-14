@@ -8,7 +8,7 @@ export default async function onGetMessages(
 ) {
   try {
     const response = await fetch(
-      `${process.env.REACT_APP_SERVER_URL}chat/retrieve-msgs?userId=${user._id}&roomId=${chatRoom}`,
+      `${process.env.REACT_APP_SERVER_URL}/chat/retrieve-msgs?userId=${user._id}&roomId=${chatRoom}`,
       {
         method: "get",
         headers: {

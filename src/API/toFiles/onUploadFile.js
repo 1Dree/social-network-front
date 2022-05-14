@@ -10,7 +10,7 @@ export default async function onUploadFile(
 
   try {
     const response = await fetch(
-      `${process.env.REACT_APP_SERVER_URL}chat/upload-file?userId=${user._id}&subtitle=${subtitle}&type=${type}&chatRoom=${chatRoom}`,
+      `${process.env.REACT_APP_SERVER_URL}/chat/upload-file?userId=${user._id}&subtitle=${subtitle}&type=${type}&chatRoom=${chatRoom}`,
       {
         method: "post",
         headers: {

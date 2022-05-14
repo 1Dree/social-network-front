@@ -2,7 +2,7 @@ import { onRes } from "../apiLib";
 
 export default async function identification(user, setUser, loginData) {
   const response = await fetch(
-    `${process.env.REACT_APP_SERVER_URL}account/identification`,
+    `${process.env.REACT_APP_SERVER_URL}/account/identification`,
     {
       method: "post",
       headers: {

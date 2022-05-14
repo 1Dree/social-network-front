@@ -2,7 +2,7 @@ import { onDefineProfileObj } from "../apiLib";
 
 export default async function onGetContacts(setUser, user, setContacts) {
   const response = await fetch(
-    `${process.env.REACT_APP_SERVER_URL}chat/retrieve-contacts/?userId=${user._id}`,
+    `${process.env.REACT_APP_SERVER_URL}/chat/retrieve-contacts/?userId=${user._id}`,
     {
       method: "get",
       headers: {
