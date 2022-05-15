@@ -35,7 +35,6 @@ export default function Signup() {
 
       navigate("/home");
     } catch (err) {
-      console.log(err);
       setErr("Erros signing up");
     } finally {
       loadingStateSwitch();

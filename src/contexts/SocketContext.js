@@ -23,7 +23,6 @@ export default function SocketProvider({ children }) {
     if (!socket) return;
 
     socket.on("error", data => {
-      alert("Socket error.");
       console.log(data);
     });
 

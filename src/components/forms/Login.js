@@ -22,13 +22,15 @@ export default function Login() {
     const { email, password } = formState;
 
     loadingStateSwitch();
+    const socket = await connSocket();
 
     try {
-      const socket = await connSocket();
       await API.account.onLogin(setUser, { email, password }, socket);
       navigate("/home");
     } catch (err) {
       setErr("Error login in");
+      socket.emit("force_disconnect");
+      socket.disconnect();
     } finally {
       loadingStateSwitch();
     }
