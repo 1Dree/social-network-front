@@ -93,7 +93,7 @@ export default function ChatContextProvider({ children }) {
     };
 
     window.addEventListener("click", outPicker);
-  }, [showEmojiPickerSwitch]);
+  }, []);
 
   const value = {
     loading,

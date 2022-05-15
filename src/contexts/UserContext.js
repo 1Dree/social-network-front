@@ -3,10 +3,7 @@ import { clearState } from "../lib";
 import { useSocket } from "./SocketContext";
 import API from "../API";
 import { onDefineProfileObj } from "../API/apiLib";
-import { WrappedLoading } from "../components";
 import useLoading from "../lib/useLoading";
-
-import { duplicateVerifier } from "../lib";
 
 import { useNavigate } from "react-router-dom";
 

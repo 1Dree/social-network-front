@@ -4,7 +4,6 @@ import { ScrollContainer } from "../../components";
 import Contact from "./Contact";
 import { useAside } from "../../contexts/AsideContext";
 import { DataAbsence } from "../../components";
-import useLoading from "../../lib/useLoading";
 
 export default function Contacts() {
   const { contacts, contactsSearchContent, loadingData } = useAside();

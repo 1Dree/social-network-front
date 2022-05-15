@@ -1,10 +1,4 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 import { useSocket } from "./SocketContext";
 import { useUser } from "./UserContext";
@@ -18,12 +12,7 @@ export const AsideContext = createContext();
 export const useAside = () => useContext(AsideContext);
 
 export default function AsideContextProvider({ children }) {
-  const {
-    chosenFriend,
-    chosenFriendSetter,
-    setChosenFriend,
-    clearChosenFriend,
-  } = useHome();
+  const { chosenFriend, setChosenFriend, clearChosenFriend } = useHome();
 
   const [contacts, setContacts] = useState([]);
   const [chatRoom, setChatRoom] = useState("");

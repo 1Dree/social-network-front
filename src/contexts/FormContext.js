@@ -1,7 +1,6 @@
-import { createContext, useContext, useState, useEffect, useMemo } from "react";
-import { clearState, stateSwitch } from "../lib";
+import { createContext, useContext, useState, useEffect } from "react";
+import { clearState } from "../lib";
 import { useErr } from "./ErrContext";
-import { WrappedLoading } from "../components";
 import useLoading from "../lib/useLoading";
 
 import { useLocation, Outlet } from "react-router-dom";
