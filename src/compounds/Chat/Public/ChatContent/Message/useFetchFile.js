@@ -11,7 +11,7 @@ const useFetchFile = assets => {
     assets.loadingStateSwitch();
 
     fetch(
-      `${process.env.REACT_APP_SERVER_URL}chat/download-file?auth=${user.tokens.access}&filename=${content}`
+      `${process.env.REACT_APP_SERVER_URL}/chat/download-file?auth=${user.tokens.access}&filename=${content}`
     )
       .then(res => res.blob())
       .then(
