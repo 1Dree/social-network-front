@@ -35,7 +35,7 @@ export default function Signup() {
 
       navigate("/home");
     } catch (err) {
-      setErr("Erros signing up");
+      setErr("Error signing up");
     } finally {
       loadingStateSwitch();
     }

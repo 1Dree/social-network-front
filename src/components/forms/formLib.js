@@ -7,7 +7,7 @@ export const inputInstruction =
 const patternsMatrix = keys =>
   [
     /^[A-Z]{1}[a-zA-Z]{1,10}\s[A-Z]{1}[a-zA-Z]{1,10}$/,
-    /^\w{3,8}@gmail.com$/,
+    /^\w{3,}@gmail.com$/,
     /^\w{8,12}/,
   ].reduce((acc, pattern, i) => {
     acc[keys[i]] = pattern.toString().replace(/\//g, "");
@@ -22,7 +22,7 @@ export const instructions = {
     "It should have two proper nouns with a maximum of 10 characters each."
   ),
   email: inputInstruction(
-    "It must be without spaces, end with '@gmail.com', and contain 13 to 18 characters."
+    "It must be without spaces and end with '@gmail.com'."
   ),
   password: inputInstruction(
     "It must be alphanumeric, without spaces, and contain 8 to 12 characters"
