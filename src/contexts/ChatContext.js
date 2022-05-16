@@ -197,7 +197,6 @@ export default function ChatContextProvider({ children }) {
   }, [socket]);
 
   useEffect(() => {
-    console.log(showEmojiPicker);
     if (showEmojiPicker) rehidePickerOnExternalClick();
   }, [showEmojiPicker, rehidePickerOnExternalClick]);
 
