@@ -72,14 +72,18 @@ export default function Friend(friend) {
       },
     });
 
-    setChatRoom(friend.chatRoom);
-    chosenFriendSetter({
+    let chosenFriendData = {
       _id: friend._id,
       name: friend.name,
       profile: friend.profile,
       chatRoom: friend.chatRoom,
       mailbox: friend.mailbox,
-    });
+    };
+
+    if (friend.online) chosenFriendData.online = true;
+
+    setChatRoom(friend.chatRoom);
+    chosenFriendSetter(chosenFriendData);
   };
 
   const onFriendRemoval = onDiscardAnimation(async () => {

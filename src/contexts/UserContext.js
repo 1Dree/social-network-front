@@ -41,6 +41,7 @@ export default function UserProvider({ children }) {
   });
   const [prevIntervalId, setPrevIntervalId] = useState(null);
   const [expiredAccess, setExpiredAccess] = useState(false);
+  const [hiddenDocument, setHiddenDocument] = useState(false);
 
   const { loading, loadingStateSwitch, LoadingComponent } = useLoading();
 
@@ -96,6 +97,7 @@ export default function UserProvider({ children }) {
     socketAuth,
     expiredAccess,
     setExpiredAccess,
+    hiddenDocument,
   };
 
   useEffect(() => {
@@ -132,6 +134,10 @@ export default function UserProvider({ children }) {
       }
     };
 
+    document.addEventListener("visibilitychange", () => {
+      setHiddenDocument(document.hidden);
+    });
+
     fetchUser();
   }, []);
 
@@ -148,10 +154,9 @@ export default function UserProvider({ children }) {
           setExpiredAccess(true);
           navigate("/expired-access");
           clearInterval(id);
-          clearInterval(prevIntervalId);
           clearUserState();
         }
-      }, 60000);
+      }, 3000);
 
       setPrevIntervalId(id);
     };
@@ -161,7 +166,12 @@ export default function UserProvider({ children }) {
       userId: user._id,
       tokens: user.tokens,
     }));
-    onVerifyAccess();
+
+    if (hiddenDocument) {
+      clearInterval(prevIntervalId);
+    } else {
+      onVerifyAccess();
+    }
 
     if (!socket) return;
 
@@ -175,7 +185,7 @@ export default function UserProvider({ children }) {
         },
       },
     });
-  }, [socket, user]);
+  }, [socket, user, hiddenDocument]);
 
   useEffect(() => {
     if (!socket) return;

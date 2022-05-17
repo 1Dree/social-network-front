@@ -151,6 +151,25 @@ export default function AsideContextProvider({ children }) {
     return foundPlace;
   };
 
+  const onFriendPresence = bool => friendId => {
+    setUser(prevState => ({
+      ...prevState,
+      friends: prevState.friends.map(friend => {
+        if (friend._id === friendId) {
+          friend.online = bool;
+        }
+
+        return friend;
+      }),
+    }));
+
+    setChosenFriend(prevState => {
+      if (prevState._id !== friendId) return prevState;
+
+      return { ...prevState, online: bool };
+    });
+  };
+
   useEffect(() => {
     let mount = true;
 
@@ -190,6 +209,10 @@ export default function AsideContextProvider({ children }) {
     socket.on("contact_photo_update", onContactUpdate("profile"));
 
     socket.on("contact_name_update", onContactUpdate("name"));
+
+    socket.on("friend_online", onFriendPresence(true));
+
+    socket.on("friend_offline", onFriendPresence(false));
 
     return () => (mount = false);
   }, [socket]);

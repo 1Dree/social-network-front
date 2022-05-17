@@ -12,11 +12,12 @@ const chosenFriendInitialState = {
   profile: "",
   chatRoom: "",
   mailbox: "",
+  online: false,
 };
 
 export default function HomeContextProvider({ children }) {
   const { socket } = useSocket();
-  const { removeFriend } = useUser();
+  const { user, removeFriend, hiddenDocument } = useUser();
 
   const [chosenFriend, setChosenFriend] = useState(chosenFriendInitialState);
 
@@ -69,6 +70,22 @@ export default function HomeContextProvider({ children }) {
       return;
     });
   }, [socket, chosenFriend]);
+
+  useEffect(() => {
+    if (!socket) return;
+
+    const socketData = {
+      payload: {
+        friendId: user._id,
+      },
+    };
+
+    if (hiddenDocument) {
+      socket.emit("friend_offline", socketData);
+    } else {
+      socket.emit("friend_online", socketData);
+    }
+  }, [socket, hiddenDocument]);
 
   const value = {
     activeHeaderOpts,

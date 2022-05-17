@@ -8,7 +8,9 @@ export default function ChatHeader({ chosenFriend }) {
         <Profile src={chosenFriend.profile.objectURL} />
       </div>
 
-      <h3 id="friend-name">{chosenFriend.name}</h3>
+      <h3 id="friend-name">{chosenFriend.name} </h3>
+
+      <p id="friend-presence"> {chosenFriend.online && "~online"}</p>
     </header>
   );
 }

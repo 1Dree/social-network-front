@@ -13,11 +13,19 @@
 }
 
 #friend-name {
-  flex: 1;
+  /* flex: 1; */
 
   color: white;
   font-weight: normal;
   margin-left: 20px;
+}
+
+#friend-presence {
+  /* flex: 1; */
+
+  color: white;
+  font-weight: normal;
+  margin-left: 10px;
 }
 
 #chat-header .icon-wrapper {
