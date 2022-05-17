@@ -101,6 +101,10 @@ export default function UserProvider({ children }) {
   };
 
   useEffect(() => {
+    document.addEventListener("visibilitychange", () => {
+      setHiddenDocument(document.hidden);
+    });
+
     const userId = sessionStorage.getItem("userid");
     const accessToken = sessionStorage.getItem("accessToken");
     const refreshToken = sessionStorage.getItem("refreshToken");
@@ -133,10 +137,6 @@ export default function UserProvider({ children }) {
         loadingStateSwitch();
       }
     };
-
-    document.addEventListener("visibilitychange", () => {
-      setHiddenDocument(document.hidden);
-    });
 
     fetchUser();
   }, []);
