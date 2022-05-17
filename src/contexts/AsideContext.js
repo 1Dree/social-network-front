@@ -152,6 +152,7 @@ export default function AsideContextProvider({ children }) {
   };
 
   const onFriendPresence = bool => friendId => {
+    console.log(bool, friendId);
     setUser(prevState => ({
       ...prevState,
       friends: prevState.friends.map(friend => {
